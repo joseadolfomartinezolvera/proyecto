@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmls:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title></title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<div class="container mt-4">
+<a th:href="@{/new2}" class="btn btn-primary">Nuevo</a>
+<table class="table">
+<thead>
+<tr>
+<th>ID Edificio</th>
+<th>Nombre</th>
+<th>Edificio</th>
+<th>Acciones</th>
+</tr>
+</thead>
+<tbody>
+<tr th:each="edificio:${edificios}">
+<td th:text="${edificio.id}"></td>
+<td th:text="${edificio.nombre}"></td>
+<td th:text="${edificio.edificio}"></td>
+<td>
+<a th:href="@{/editar2/}+${edificio.id}" class="btn btn-warning">Editar</a>
+<a th:href="@{/eliminar2/}+${edificio.id}" class="btn btn-danger">Eliminar</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+</body>
+</html>
